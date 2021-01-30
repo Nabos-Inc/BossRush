@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KnightController : Enemy
 {
@@ -12,7 +10,20 @@ public class KnightController : Enemy
     public override void Move(Vector3 direction)
     {
         direction.Normalize();
-        rb2d.MovePosition(transform.position + direction * baseSpeed * Time.deltaTime);
+
+        if(Mathf.Abs(direction.x) > 0.001f)
+        {
+            direction.y = 0f;
+        }
+        else if(Mathf.Abs(direction.y) > 0.001f)
+        {
+            direction.x = 0f;
+        }
+
+        Vector2 movementVector = new Vector2(GetRawValue(direction.x), GetRawValue(direction.y));
+
+        rb2d.MovePosition(rb2d.position + movementVector * baseSpeed * Time.fixedDeltaTime);
+        UpdateAnimation(movementVector);
     }
 
     public override void Attack()
