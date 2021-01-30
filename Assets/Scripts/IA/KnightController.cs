@@ -11,6 +11,7 @@ public class KnightController : Enemy
 
     public override void Move(Vector3 direction)
     {
+        direction.Normalize();
         rb2d.MovePosition(transform.position + direction * baseSpeed * Time.deltaTime);
     }
 

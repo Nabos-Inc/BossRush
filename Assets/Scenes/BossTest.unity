@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
-  baseSpeed: 6
+  baseSpeed: 3
   baseDamage: 5
 --- !u!50 &579342159
 Rigidbody2D:
