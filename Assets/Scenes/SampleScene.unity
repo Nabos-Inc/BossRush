@@ -216,6 +216,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8269304130728856840, guid: 3e22c779ad0de7646a7ff2bc98963567,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269304130728856845, guid: 3e22c779ad0de7646a7ff2bc98963567,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7290614360437580153, guid: 26e95304e4fd8cb42bc721d72981c431,
+        type: 3}
     - target: {fileID: 8269304130728856847, guid: 3e22c779ad0de7646a7ff2bc98963567,
         type: 3}
       propertyPath: m_RootOrder

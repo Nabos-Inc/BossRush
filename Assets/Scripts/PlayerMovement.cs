@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     private bool usingBow;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateMovementAnimation();
 
-        if (Input.GetButtonUp("Jump")){
+        if (Input.GetButtonUp("Bow")){
             Debug.Log("Shoot");
+            ShootArrow();
         }
 
         // if (change != Vector3.zero){
@@ -66,6 +68,25 @@ public class PlayerMovement : MonoBehaviour
             transform.position + change * speed * Time.deltaTime
         );
 
+    }
+
+    private void ShootArrow(){
+        Vector2 direction = new Vector2(animator.GetFloat("moveX"),animator.GetFloat("moveY"));
+        Arrow arrow = Instantiate(projectile, transform.position + ArrowOffset(), Quaternion.identity).GetComponent<Arrow>();
+        arrow.SetUp(direction, ChooseArrowOrientation());
+    }
+
+    private Vector3 ArrowOffset(){
+        Vector3 offset = new Vector3(0.0f,0.0f,0.0f); 
+        if(animator.GetFloat("moveX") != 0){
+            offset.y += (float) 0.32;
+        }
+        return offset;
+    }
+
+    Vector3 ChooseArrowOrientation(){
+        float angle = Mathf.Atan2(animator.GetFloat("moveY"),animator.GetFloat("moveX")) * Mathf.Rad2Deg;
+        return new Vector3(0,0,angle);
     }
 
 }
