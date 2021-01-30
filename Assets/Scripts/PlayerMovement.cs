@@ -26,10 +26,26 @@ public class PlayerMovement : MonoBehaviour
             Movecharacter();
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
+            animator.SetBool("isMoving", true);
 
+        } else {
+            animator.SetBool("isMoving", false);
         }
 
-        Debug.Log(change);   
+        // Debug.Log(change);   
+    }
+
+    void UpdateMovementAnimation(){
+        if (change != Vector3.zero){
+            Movecharacter();
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
+            animator.SetBool("isMoving", true);
+
+        } else {
+            animator.SetBool("isMoving", false);
+        }
+
     }
 
     void Movecharacter(){
