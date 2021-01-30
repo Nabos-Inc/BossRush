@@ -27,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
         usingBow = Input.GetButton("Jump");
 
         UpdateMovementAnimation();
+
+        if (Input.GetButtonUp("Jump")){
+            Debug.Log("Shoot");
+        }
+
         // if (change != Vector3.zero){
         //     Movecharacter();
         //     animator.SetFloat("moveX", change.x);
