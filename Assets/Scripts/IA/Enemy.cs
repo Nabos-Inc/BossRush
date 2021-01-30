@@ -8,6 +8,10 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] protected int baseDamage;
 
+    [SerializeField] protected EnemyUI enemyUI;
+
+    protected int currentHealth;
+
     protected Rigidbody2D rb2d;
 
     protected Animator animator;
@@ -16,6 +20,8 @@ public abstract class Enemy : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = health;
+        enemyUI.ArrangeHealthSprites(health);
     }
 
     public abstract void Move(Vector3 direction);
@@ -33,5 +39,19 @@ public abstract class Enemy : MonoBehaviour
     {
         animator.SetFloat("moveX", movement.x);
         animator.SetFloat("moveY", movement.y);
+    }
+
+    protected void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if(currentHealth < 0)
+        {
+            currentHealth = 0;
+            // Die Function
+        }
+        for(int i = 0; i < damage; i++)
+        {
+            enemyUI.SetInactiveHealth(currentHealth + i, health);
+        }
     }
 }

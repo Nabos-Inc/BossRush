@@ -14,6 +14,8 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] PlayerUI playerUI;
 
+    [SerializeField] HealingUI healingUI;
+
     private int currentHealth;
 
     private int currentDamage;
@@ -22,6 +24,7 @@ public class PlayerData : MonoBehaviour
     {
         currentHealth = baseHealth;
         playerUI.ArrangeHealthSprites(baseHealth);
+        healingUI.ArrangeHealthSprites(baseHealth);
     }
 
     public void AcquireHealth()
@@ -33,14 +36,23 @@ public class PlayerData : MonoBehaviour
     public void Heal()
     {
         currentHealth += 1;
+        
+        if(currentHealth >= baseHealth) currentHealth = baseHealth;
+
+        healingUI.UseHealOrb();
+        playerUI.SetActiveHealth(currentHealth, baseHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        if(currentHealth < 0) currentHealth = 0;
-        
+        if(currentHealth < 0) 
+        {
+            currentHealth = 0;
+            //Game Over
+        }
+
         for(int i = 0; i < damage; i++)
         {
             playerUI.SetInactiveHealth(currentHealth + i, baseHealth);
