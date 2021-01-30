@@ -17,8 +17,12 @@ public class Arrow : MonoBehaviour
         myRigidbody.velocity = velocity.normalized * speed;
         transform.rotation = Quaternion.Euler(direction);
 
+    }
 
-
+    
+     void OnBecameInvisible () {
+         Debug.Log("Delete");
+        Destroy(gameObject);
     }
 
 }

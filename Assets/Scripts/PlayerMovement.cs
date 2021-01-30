@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour
     private bool usingBow;
     public GameObject projectile;
 
+    public float shootingCooldown;
+    private float shootingCount;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         usingBow = false;
+        shootingCount = shootingCooldown + 1.0f;
     }
 
     // Update is called once per frame
@@ -29,10 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateMovementAnimation();
 
-        if (Input.GetButtonUp("Bow")){
+        shootingCount += Time.time;
+
+        if (Input.GetButtonUp("Bow") && (shootingCount > shootingCooldown)){
             Debug.Log("Shoot");
+            Debug.Log(shootingCount);
+
             ShootArrow();
+            shootingCount = 0.0f;
         }
+
+        
 
         // if (change != Vector3.zero){
         //     Movecharacter();
@@ -49,8 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateMovementAnimation(){
 
-
-        animator.SetBool("usingBow", usingBow);
+        if (shootingCount > shootingCooldown){
+            animator.SetBool("usingBow", usingBow);
+        }
         if (change != Vector3.zero){
             Movecharacter();
             animator.SetFloat("moveX", change.x);
@@ -74,6 +85,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = new Vector2(animator.GetFloat("moveX"),animator.GetFloat("moveY"));
         Arrow arrow = Instantiate(projectile, transform.position + ArrowOffset(), Quaternion.identity).GetComponent<Arrow>();
         arrow.SetUp(direction, ChooseArrowOrientation());
+        if(animator.GetFloat("moveY") == -1){
+            SpriteRenderer sprite = arrow.GetComponent<SpriteRenderer>();
+            Debug.Log(sprite.sortingLayerName.ToString());
+            sprite.sortingLayerName = "Projectiles Front";
+            Debug.Log(sprite.sortingLayerName.ToString());
+        }
+
     }
 
     private Vector3 ArrowOffset(){
@@ -88,5 +106,6 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(animator.GetFloat("moveY"),animator.GetFloat("moveX")) * Mathf.Rad2Deg;
         return new Vector3(0,0,angle);
     }
+
 
 }
