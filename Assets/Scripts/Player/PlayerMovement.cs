@@ -57,13 +57,18 @@ public class PlayerMovement : MonoBehaviour
         // Debug.Log(change);   
     }
 
+    void FixedUpdate()
+    {
+        Movecharacter();
+    }
+
     void UpdateMovementAnimation(){
 
         if (shootingCount > shootingCooldown){
             animator.SetBool("usingBow", usingBow);
         }
         if (change != Vector3.zero){
-            Movecharacter();
+            //Movecharacter();
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             animator.SetBool("isMoving", true);
