@@ -721,6 +721,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494103912}
   m_CullTransparentMesh: 0
+--- !u!1 &532439755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7180837140285129561, guid: 48b3bf7e3b85bd04eb9ed1db88cd3d48,
+    type: 3}
+  m_PrefabInstance: {fileID: 5207759754487247498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &802143507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,6 +968,7 @@ MonoBehaviour:
   character: {fileID: 494103912}
   waypoints:
   - spot: {fileID: 1500724760}
+    bossSpot: {fileID: 0}
     nextWaypoints:
     - {fileID: 105603919}
     beforeWaypoints: []
@@ -969,6 +976,7 @@ MonoBehaviour:
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 105603919}
+    bossSpot: {fileID: 0}
     nextWaypoints:
     - {fileID: 1015260}
     beforeWaypoints:
@@ -977,6 +985,7 @@ MonoBehaviour:
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 1015260}
+    bossSpot: {fileID: 0}
     nextWaypoints:
     - {fileID: 1704397984}
     beforeWaypoints:
@@ -985,6 +994,7 @@ MonoBehaviour:
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 1704397984}
+    bossSpot: {fileID: 532439755}
     nextWaypoints:
     - {fileID: 357429525}
     beforeWaypoints:
@@ -993,6 +1003,7 @@ MonoBehaviour:
     sceneName: KnightFight
     isCompleted: 0
   - spot: {fileID: 357429525}
+    bossSpot: {fileID: 0}
     nextWaypoints:
     - {fileID: 1819695601}
     beforeWaypoints:
@@ -1001,6 +1012,7 @@ MonoBehaviour:
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 1819695601}
+    bossSpot: {fileID: 0}
     nextWaypoints:
     - {fileID: 2106157230}
     beforeWaypoints:
@@ -1009,55 +1021,61 @@ MonoBehaviour:
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 2106157230}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
   - spot: {fileID: 0}
+    bossSpot: {fileID: 0}
     nextWaypoints: []
     beforeWaypoints: []
     bossWaypoint: 0
     sceneName: 
     isCompleted: 0
-  completedSprite: {fileID: -8708997993528064169, guid: 9ba1f51062c061b42a0850d7173e0cd5,
-    type: 3}
 --- !u!4 &978595111
 Transform:
   m_ObjectHideFlags: 0
@@ -1962,6 +1980,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6376641148217749345, guid: 48b3bf7e3b85bd04eb9ed1db88cd3d48,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2457374745362583756, guid: 9ba1f51062c061b42a0850d7173e0cd5,
+        type: 3}
     - target: {fileID: 7180837140285129561, guid: 48b3bf7e3b85bd04eb9ed1db88cd3d48,
         type: 3}
       propertyPath: m_Name

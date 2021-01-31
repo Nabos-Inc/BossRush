@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0;
         gameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void LoadSceneGameOver(string sceneName)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
     public void LoadScene(string sceneName)

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Waypoint
 {
     public GameObject spot;
+
+    public GameObject bossSpot;
     public List<GameObject> nextWaypoints;
 
     public List<GameObject> beforeWaypoints;
@@ -24,8 +26,6 @@ public class OverworldMovement : MonoBehaviour
     public GameObject character;
     public List<Waypoint> waypoints;
 
-    public Sprite completedSprite;
-
     private Waypoint currentWaypoint;
 
     private int waypointIndex = 0;
@@ -38,7 +38,7 @@ public class OverworldMovement : MonoBehaviour
         if(gameManager.data.bossDatas[0].isDone)
         {
             waypoints[3].isCompleted = true;
-            waypoints[3].spot.gameObject.GetComponent<Image>().sprite = completedSprite;
+            waypoints[3].bossSpot.GetComponent<Animator>().SetTrigger("complete");
         }
     }
 
