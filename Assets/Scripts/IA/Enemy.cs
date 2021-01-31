@@ -39,6 +39,7 @@ public abstract class Enemy : MonoBehaviour
     {
         animator.SetFloat("moveX", movement.x);
         animator.SetFloat("moveY", movement.y);
+        animator.SetBool("isMoving", true);
     }
 
     protected void TakeDamage(int damage)

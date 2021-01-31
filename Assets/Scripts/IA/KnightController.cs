@@ -28,6 +28,6 @@ public class KnightController : Enemy
 
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        animator.SetTrigger("attack");
     }
 }
