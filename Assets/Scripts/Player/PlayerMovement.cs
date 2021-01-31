@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     private bool usingBow;
+    private bool usingSword;
+
+
+
     public GameObject projectile;
 
     private bool hasShield;
@@ -17,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
 
     public float shootingCooldown;
+
+    public float doubleSlashTimer;
+    private float doubleSlashCount;
     private float shootingCount;
     // Start is called before the first frame update
     void Start()
@@ -26,12 +33,14 @@ public class PlayerMovement : MonoBehaviour
         usingBow = false;
         
         shootingCount = shootingCooldown + 1.0f;
+        doubleSlashCount = doubleSlashTimer + 1.0f;
     }
 
     void initializeEquipment(){
         hasLightArrows = false;
         hasShield = false;
         hasSword = false;
+        
     }
 
     // Update is called once per frame
@@ -40,7 +49,8 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        usingBow = Input.GetButton("Jump");
+        usingBow = Input.GetButton("Bow");
+        // usingSword = Input.GetButton("Sword");
 
         UpdateMovementAnimation();
 
@@ -52,6 +62,20 @@ public class PlayerMovement : MonoBehaviour
 
             ShootArrow();
             shootingCount = 0.0f;
+            
+        } 
+
+        if (Input.GetButtonUp("Sword") && (shootingCount > shootingCooldown)){
+            Debug.Log("Slash");
+            Debug.Log(shootingCount);
+
+            // Slash();
+            shootingCount = 0.0f;
+            doubleSlashCount = 0.0f;
+        }
+
+        if (doubleSlashCount > doubleSlashTimer) {
+
         }
 
         
@@ -77,7 +101,14 @@ public class PlayerMovement : MonoBehaviour
     void UpdateMovementAnimation(){
 
         if (shootingCount > shootingCooldown){
-            animator.SetBool("usingBow", usingBow);
+            // if (usingBow) {
+                animator.SetBool("usingBow", usingBow);
+                // usingBow = false;
+            // }
+            // if (usingSword) {
+                // animator.SetBool("usingSword", usingSword);
+                // usingSword = false;
+            // }
         }
         if (change != Vector3.zero){
             //Movecharacter();
@@ -97,6 +128,10 @@ public class PlayerMovement : MonoBehaviour
         );
 
     }
+
+    // private void Slash(){
+
+    // }
 
     private void ShootArrow(){
         Vector2 direction = new Vector2(animator.GetFloat("moveX"),animator.GetFloat("moveY"));
