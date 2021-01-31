@@ -13,7 +13,7 @@ public class HealingUI : UIController
 
     private int slotState = 0;
 
-    void Start()
+    void Awake()
     {
         currentSlot = transform.GetChild(0);
         currentSlotImage = currentSlot.GetComponent<Image>();

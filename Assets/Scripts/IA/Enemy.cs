@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] protected EnemyUI enemyUI;
 
+    [SerializeField] protected GameObject unlockableObject;
+
     protected int currentHealth;
 
     protected Rigidbody2D rb2d;
@@ -52,11 +54,12 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             currentHealth = 0;
             Die();
         }
+
         for(int i = 0; i < damage; i++)
         {
             enemyUI.SetInactiveHealth(currentHealth + i, health);
@@ -66,6 +69,7 @@ public abstract class Enemy : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
-        //Music
+        //unlockableObject.SetActive(true);
+        Instantiate(unlockableObject, gameObject.transform.position, gameObject.transform.rotation);
     }
 }

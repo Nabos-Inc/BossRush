@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody2D: {fileID: 3796028722343376463}
-  dialogBox: {fileID: 0}
+  dialogBox: {fileID: 4394152287920192241, guid: be7dcc5642577aa4c948d0107dee19f1,
+    type: 3}
   unlockableName: Sword
 --- !u!95 &3796028722343376460
 Animator:
