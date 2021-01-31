@@ -42,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
         animator.SetBool("isMoving", true);
     }
 
-    protected void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if(currentHealth < 0)

@@ -4674,6 +4674,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 5642926083745753443, guid: 8c96b70b33cb24849805e81b0b3935d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5642926083745753444, guid: 8c96b70b33cb24849805e81b0b3935d7,
         type: 3}
       propertyPath: m_RootOrder
