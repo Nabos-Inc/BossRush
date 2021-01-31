@@ -50,8 +50,7 @@ public class PlayerData : MonoBehaviour
         if(currentHealth < 0) 
         {
             currentHealth = 0;
-            // Game Over
-            Time.timeScale = 0;
+            FindObjectOfType<GameManager>().GameOver();
         }
 
         for(int i = 0; i < damage; i++)
