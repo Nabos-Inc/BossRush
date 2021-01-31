@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: b1801c60bed31f943be12939f88ee305
+guid: 5245ad292b3611244ad5d4cd8f80425b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2308440548935889218
-    second: Unlocks_0
+      213: 7719488661637190323
+    second: NoiroIdle_0
   - first:
-      213: 8371934450719624237
-    second: Unlocks_1
+      213: 6488560645231618606
+    second: NoiroIdle_1
+  - first:
+      213: -6348119171134979505
+    second: NoiroIdle_2
+  - first:
+      213: -7160908173807242370
+    second: NoiroIdle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unlocks_0
+      name: NoiroIdle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,20 +113,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe81972d85c6ffd0800000000000000
-      internalID: -2308440548935889218
+      spriteID: 3b25a84c902212b60800000000000000
+      internalID: 7719488661637190323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unlocks_1
+      name: NoiroIdle_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2c8ff9c6061f2470800000000000000
-      internalID: 8371934450719624237
+      spriteID: e2a2c9a678ffb0a50800000000000000
+      internalID: 6488560645231618606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NoiroIdle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4207a46f33f6e7a0800000000000000
+      internalID: -6348119171134979505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NoiroIdle_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73370fb4f75f9c90800000000000000
+      internalID: -7160908173807242370
       vertices: []
       indices: 
       edges: []
