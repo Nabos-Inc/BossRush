@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Waypoint
@@ -33,6 +34,12 @@ public class OverworldMovement : MonoBehaviour
     {
         if(waypoints != null)
             currentWaypoint = waypoints[waypointIndex];
+        
+        if(gameManager.data.bossDatas[0].isDone)
+        {
+            waypoints[3].isCompleted = true;
+            waypoints[3].spot.gameObject.GetComponent<Image>().sprite = completedSprite;
+        }
     }
 
     void Update()

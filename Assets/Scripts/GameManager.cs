@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject gameOverCanvas;
 
+    public GameData data;
+
     public void GameOver()
     {
         Time.timeScale = 0;
