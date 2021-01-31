@@ -11,13 +11,13 @@ public class KnightController : Enemy
     {
         direction.Normalize();
 
-        if(Mathf.Abs(direction.x) > 0.001f)
-        {
-            direction.y = 0f;
-        }
-        else if(Mathf.Abs(direction.y) > 0.001f)
+        if(Mathf.Abs(direction.y) > 0.001f && Mathf.Abs(direction.x) > 0.001f)
         {
             direction.x = 0f;
+        }
+        else if(Mathf.Abs(direction.x) > 0.001f)
+        {
+            direction.y = 0f;
         }
 
         Vector2 movementVector = new Vector2(GetRawValue(direction.x), GetRawValue(direction.y));
