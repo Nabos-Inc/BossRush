@@ -11,6 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private bool usingBow;
     public GameObject projectile;
 
+    private bool hasShield;
+    private bool hasSword;
+    private bool hasLightArrows;
+
+
     public float shootingCooldown;
     private float shootingCount;
     // Start is called before the first frame update
@@ -19,7 +24,14 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         usingBow = false;
+        
         shootingCount = shootingCooldown + 1.0f;
+    }
+
+    void initializeEquipment(){
+        hasLightArrows = false;
+        hasShield = false;
+        hasSword = false;
     }
 
     // Update is called once per frame
@@ -112,5 +124,16 @@ public class PlayerMovement : MonoBehaviour
         return new Vector3(0,0,angle);
     }
 
+    public void unlockItem(string name){
+        Debug.Log("Unlocked the item" + name);
+        if (name == "Sword"){
+            hasSword = true;
+            Debug.Log(hasSword);
+        }
+        if (name == "Shield"){
+            hasShield = true;
+            Debug.Log(hasSword);
+        }
+    }
 
 }

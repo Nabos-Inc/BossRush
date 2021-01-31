@@ -26,6 +26,9 @@ public class Unlockable : MonoBehaviour
         if (other.CompareTag("Player")){
             Destroy(gameObject);
             dialogBox.SetActive(true);
+            PlayerMovement player = other.GetComponent<PlayerMovement>();
+            player.unlockItem(unlockableName);
+
         }
 
     }
