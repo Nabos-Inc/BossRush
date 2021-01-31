@@ -16,6 +16,13 @@ public abstract class Enemy : MonoBehaviour
 
     protected Animator animator;
 
+    protected float damageAccumulated = 0;
+
+    public int BaseDamage
+    {
+        get { return baseDamage; }
+    }
+
     protected void Init()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -48,11 +55,17 @@ public abstract class Enemy : MonoBehaviour
         if(currentHealth < 0)
         {
             currentHealth = 0;
-            // Die Function
+            Die();
         }
         for(int i = 0; i < damage; i++)
         {
             enemyUI.SetInactiveHealth(currentHealth + i, health);
         }
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false);
+        //Music
     }
 }

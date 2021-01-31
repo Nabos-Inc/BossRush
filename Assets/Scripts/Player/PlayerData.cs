@@ -50,7 +50,8 @@ public class PlayerData : MonoBehaviour
         if(currentHealth < 0) 
         {
             currentHealth = 0;
-            //Game Over
+            // Game Over
+            Time.timeScale = 0;
         }
 
         for(int i = 0; i < damage; i++)

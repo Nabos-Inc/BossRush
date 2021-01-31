@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class KnightController : Enemy
 {
@@ -28,6 +29,14 @@ public class KnightController : Enemy
 
     public override void Attack()
     {
-        animator.SetTrigger("attack");
+        StartCoroutine(IAttack());
+    }
+
+    private IEnumerator IAttack()
+    {
+        animator.SetBool("attack", true);
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("attack", false);
+        yield return new WaitForSeconds(0.4f);
     }
 }

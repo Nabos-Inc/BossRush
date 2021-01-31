@@ -7,29 +7,24 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     public float speed;
     public Rigidbody2D myRigidbody;
-
-    void Start()
-    {
-        
-    }
     
     public void SetUp(Vector2 velocity, Vector3 direction){
         myRigidbody.velocity = velocity.normalized * speed;
         transform.rotation = Quaternion.Euler(direction);
 
     }
-
     
-     void OnBecameInvisible () {
-         Debug.Log("Delete");
+    void OnBecameInvisible () {
+        Debug.Log("Delete");
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        Debug.Log("Collide!");
+        if(collider.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            collider.gameObject.GetComponent<Enemy>().TakeDamage(1);
             Destroy(gameObject);
         }
     }
