@@ -128,11 +128,13 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Unlocked the item" + name);
         if (name == "Sword"){
             hasSword = true;
+            animator.SetBool("hasSword", true);
             Debug.Log(hasSword);
         }
         if (name == "Shield"){
             hasShield = true;
-            Debug.Log(hasSword);
+            animator.SetBool("hasShield", true);
+            // Debug.Log(hasSword);
         }
     }
 

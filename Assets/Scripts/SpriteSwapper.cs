@@ -64,11 +64,13 @@ public class SpriteSwapper : EditorWindow
     {
         string[] splitName;
         AnimationClip clonedClip;
+        string suffix;
+        suffix = "Sword";
         //Checks to see if folder you wish to drop them in exists. I create a folder named after the texture.
         //YOU MUST CHANGE THIS TO REFERENCE A FOLDER STRUCTURE IN YOUR PROJECT.
-        if(!AssetDatabase.IsValidFolder("Assets/Animations/Bystander/"+tex.name))
+        if(!AssetDatabase.IsValidFolder("Assets/Animations/Temp/"+tex.name))
         {
-            AssetDatabase.CreateFolder("Assets/Animations/Bystander",tex.name);
+            AssetDatabase.CreateFolder("Assets/Animations/Temp",tex.name);
         }
         //Copies origional animation clip and assigns it to a retrieves the copied animation clip.
         AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(clip), "Assets/Animations/Bystander/"+tex.name + "/" + tex.name + clip.name + ".anim");
