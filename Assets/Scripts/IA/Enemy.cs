@@ -71,5 +71,6 @@ public abstract class Enemy : MonoBehaviour
         gameObject.SetActive(false);
         //unlockableObject.SetActive(true);
         Instantiate(unlockableObject, gameObject.transform.position, gameObject.transform.rotation);
+        FindObjectOfType<GameManager>().data.bossDatas[0].isDone = true;
     }
 }

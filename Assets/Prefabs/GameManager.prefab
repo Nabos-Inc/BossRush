@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 5167922456576776425, guid: f367e62fe86199c459aee9ef47169513,
     type: 3}
+  data: {fileID: 11400000, guid: 14f2046b16d8ba64abd38300a1a1d92a, type: 2}
