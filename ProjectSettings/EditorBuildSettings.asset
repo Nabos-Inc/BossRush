@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: edfff92ddf5961b43afcc890f0515999
+  - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: f6a208124b9419d4899b7dc1623b8f79
   - enabled: 1
