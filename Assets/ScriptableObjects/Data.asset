@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossDatas:
   - bossName: Knight
-    isDone: 1
+    isDone: 0

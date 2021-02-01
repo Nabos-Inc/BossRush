@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
- 
+#if UNITY_EDITOR
 public class SpriteSwapper : EditorWindow
 {
     AnimationClip clip;
@@ -97,4 +97,4 @@ public class SpriteSwapper : EditorWindow
         AssetDatabase.Refresh();
     }
 }
- 
+#endif
